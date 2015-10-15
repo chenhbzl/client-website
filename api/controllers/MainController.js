@@ -1,7 +1,7 @@
 module.exports = {
   index: function (req, res) {
     var page = req.params.page || 1;
-    var limit = 100;
+    var limit = 120;
     var skip = 100 * Number(page);
     var query = { where: {}, skip: skip, limit: limit, sort: 'title DESC' };
     Mzitu.find(query).exec(function (err, result) {
