@@ -1,14 +1,14 @@
-<nav style="position: fixed; top:0;height: 30px;z-index: 20;left: 0;right: 0;">
-    <ul class="pager" style="margin: 0;">
+<nav class="nav">
+    <ul class="pager">
         <li class="previous"><a href="/<%if(data.page===1) {%>1<%}else{%><%=data.page-1%><%}%>"><span aria-hidden="true">&larr;</span>Last</a></li>
         <li class="next"><a href="/<%= data.page+1%>">Next<span aria-hidden="true">&rarr;</span></a></li>
     </ul>
 </nav>
-<div class="row" style="margin-top: 30px;">
+<div class="row">
     <% for(var i=0; i<data.result.length; i++) {%>
-    <div style="padding: 0 5px;padding-bottom: 10px;" class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-        <a style="margin-bottom: 0" target="_blank" href="/profile/<%= data.result[i].id%>" class="thumbnail">
-            <img class="lazy" data-original="http://139.196.35.176:8000/<%= data.result[i].localSmallPicSrc%>" style="height: 280px;"  alt="<%= data.result[i].title%>" title="<%= data.result[i].title%>">
+    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col">
+        <a target="_blank" href="/profile/<%= data.result[i].id%>" class="thumbnail">
+            <img class="lazy" data-original="http://139.196.35.176:8000/<%= data.result[i].localSmallPicSrc%>" alt="<%= data.result[i].title%>" title="<%= data.result[i].title%>">
         </a>
     </div>
     <% } %>
