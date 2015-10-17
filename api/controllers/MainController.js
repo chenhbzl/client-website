@@ -3,8 +3,8 @@ module.exports = {
     var page = req.params.page || 1;
     var limit = 120;
     var skip = 100 * Number(page);
-    var query = { where: {}, skip: skip, limit: limit, sort: 'title DESC' };
-    Mzitu.find(query).exec(function (err, result) {
+    var query = { where: {finish:true}, skip: skip, limit: limit};
+    Umei.find(query).exec(function (err, result) {
       if (err) {
         return res.serverError(err);
       }
@@ -14,7 +14,7 @@ module.exports = {
   },
   profile: function (req, res) {
     var id = req.params.id;
-    Mzitu.findOne({id:id}).exec(function (err, result) {
+    Umei.findOne({id:id}).exec(function (err, result) {
       res.ok(result.localBigPic, 'profile');
     });
   }
