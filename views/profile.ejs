@@ -1,6 +1,27 @@
+<style>
 
-<% for(var i=0; i<data.length; i++) {%>
-<div style="margin-bottom: 10px">
-    <img class="lazy" data-original="http://pretty-girl.b0.upaiyun.com/<%=data[i]%>" style="width: 100%;" alt=""/>
+    /* Demo styles */
+    html,body{background:#222;margin:0;}
+    body{border-top:4px solid #000;}
+    .content{color:#777;font:12px/1.4 "helvetica neue",arial,sans-serif;width:620px;margin:20px auto;}
+    h1{font-size:12px;font-weight:normal;color:#ddd;margin:0;}
+    p{margin:0 0 20px}
+    a {color:#22BCB9;text-decoration:none;}
+    .cred{margin-top:20px;font-size:11px;}
+
+    /* This rule is read by Galleria to define the gallery height: */
+    html,body,#galleria{height:100%; width: 100%}
+
+</style>
+<div id="galleria">
+    <% for(var i=0; i<data.localBigPic.length; i++) {%>
+    <a href="http://pretty-girl.b0.upaiyun.com/<%=data.localBigPic[i]%>">
+        <img
+                src="http://pretty-girl.b0.upaiyun.com/<%=data.localBigPic[i]%>!small"
+                data-big="http://pretty-girl.b0.upaiyun.com/<%=data.localBigPic[i]%>"
+                data-title="<%=data.title%>"
+                >
+    </a>
+    <% } %>
 </div>
-<% } %>
+

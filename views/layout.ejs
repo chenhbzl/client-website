@@ -88,11 +88,21 @@
     <!--SCRIPTS-->
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/galleria-1.4.2.min.js"></script>
     <script src="/js/jquery.lazyload.js"></script>
     <script src="/js/jquery.scrollstop.js"></script>
     <!--SCRIPTS END-->
     <script>
         $("img.lazy").lazyload();
+    </script>
+    <script>
+        if ($('#galleria').length) {
+            // Load the classic theme
+            Galleria.loadTheme('/galleria/classic/galleria.classic.min.js');
+
+            // Initialize Galleria
+            Galleria.run('#galleria');
+        }
     </script>
   </body>
 </html>

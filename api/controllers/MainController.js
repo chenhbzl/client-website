@@ -14,8 +14,11 @@ module.exports = {
   },
   profile: function (req, res) {
     var id = req.params.id;
-    Umei.findOne({id:id}).exec(function (err, result) {
-      res.ok(result.localBigPic, 'profile');
+
+    Umei.findOne({id:id, finish:true}).exec(function (err, result) {
+      var title = result.title;
+      var localBigPic = result.localBigPic;
+      return res.ok({title: title, localBigPic: localBigPic}, {view: 'profile'});
     });
   }
 };
