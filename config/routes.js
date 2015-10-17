@@ -33,7 +33,7 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': 'MainController.index',
-  '/:page': 'MainController.index',
+  '/page/:page': 'MainController.index',
   '/profile/:id': 'MainController.profile'
 
   /***************************************************************************

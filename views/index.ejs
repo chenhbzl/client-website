@@ -1,7 +1,7 @@
 <nav class="nav">
     <ul class="pager">
-        <li class="previous"><a href="/<%if(data.page===1) {%>1<%}else{%><%=data.page-1%><%}%>"><span aria-hidden="true">&larr;</span>Last</a></li>
-        <li class="next"><a href="/<%= data.page+1%>">Next<span aria-hidden="true">&rarr;</span></a></li>
+        <li class="previous"><a href="/page/<%if(data.page===1) {%>1<%}else{%><%=data.page-1%><%}%>"><span aria-hidden="true">&larr;</span>Last</a></li>
+        <li class="next"><a href="/page/<%= data.page+1%>">Next<span aria-hidden="true">&rarr;</span></a></li>
     </ul>
 </nav>
 <div class="row">

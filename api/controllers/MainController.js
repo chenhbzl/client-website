@@ -1,5 +1,6 @@
 module.exports = {
-  index: function (req, res) {
+  index: function (req, res, next) {
+
     var page = req.params.page || 1;
     var limit = 120;
     var skip = 100 * Number(page);
