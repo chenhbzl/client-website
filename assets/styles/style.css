@@ -1,19 +1,88 @@
-
-#pretty .nav {
-  position: fixed; top:0;height: 30px;z-index: 20;left: 0;right: 0;
-}
-#pretty .pager {
+body {
   margin: 0;
+  padding: 0;
+  background: #eee;
+  font: 10px/13px 'Lucida Sans', sans-serif;
 }
-#pretty .row {
-  margin-top: 30px;
+.wrap {
+  overflow: hidden;
+  max-width: 2000px;
+  margin: 0 auto;
 }
-#pretty .col {
-  padding: 0 5px;padding-bottom: 10px;
+.box {
+  float: left;
+  position: relative;
+  width: 10%;
+  padding-bottom: 15%;
 }
-#pretty .col a {
-  margin-bottom: 0
+.boxInner {
+  position: absolute;
+  bottom:5px;
+  left: 5px;
+  right: 5px;
+  top: 5px;
+  overflow: hidden;
 }
-#pretty .col img {
-  height: 280px;
+.boxInner img {
+  width: 100%;
+}
+@media only screen and (max-width : 400px) {
+  .box {
+    width: 50%;
+    padding-bottom: 75%;
+  }
+}
+@media only screen and (max-width : 600px) and (min-width : 400px) {
+  .box {
+    width: 33.3333%;
+    padding-bottom: 49.9999%;
+  }
+}
+@media only screen and (max-width : 800px) and (min-width : 600px) {
+  .box {
+    width: 25%;
+    padding-bottom: 37.5%;
+  }
+}
+@media only screen and (max-width : 1000px) and (min-width : 800px) {
+  .box {
+    width: 20%;
+    padding-bottom: 30%;
+  }
+}
+@media only screen and (max-width : 1200px) and (min-width : 1000px) {
+  .box {
+    width: 16.6666%;
+    padding-bottom: 25%;
+  }
+}
+@media only screen and (max-width : 1400px) and (min-width : 1200px) {
+  .box {
+    width: 14.2557%;
+    padding-bottom: 21.4285%;
+  }
+}
+@media only screen and (max-width : 1600px) and (min-width : 1400px) {
+  .box {
+    width: 12.5%;
+    padding-bottom: 18.75%;
+  }
+}
+@media only screen and (max-width : 1800px) and (min-width : 1600px) {
+  .box {
+    width: 11.1111%;
+    padding-bottom: 16.6666%;
+  }
+}
+@media only screen and (max-width : 1800px) and (min-width : 1600px) {
+  .box {
+    width: 11.1111%;
+    padding-bottom: 16.6666%;
+  }
+}
+@media only screen and (max-width : 2000px) and (min-width : 1800px) {
+  .box {
+    width: 10%;
+    padding-bottom: 15%;
+  }
 }

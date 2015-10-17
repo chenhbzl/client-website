@@ -1,15 +1,14 @@
-<nav class="nav">
-    <ul class="pager">
-        <li class="previous"><a href="/page/<%if(data.page===1) {%>1<%}else{%><%=data.page-1%><%}%>"><span aria-hidden="true">&larr;</span>Last</a></li>
-        <li class="next"><a href="/page/<%= data.page+1%>">Next<span aria-hidden="true">&rarr;</span></a></li>
-    </ul>
-</nav>
-<div class="row">
+
+
+
+<div class="wrap">
     <% for(var i=0; i<data.result.length; i++) {%>
-    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col">
-        <a target="_blank" href="/profile/<%= data.result[i].id%>" class="thumbnail">
-            <img class="lazy" data-original="http://pretty-girl.b0.upaiyun.com/<%= data.result[i].localSmallPicSrc%>" alt="<%= data.result[i].title%>" title="<%= data.result[i].title%>">
-        </a>
+    <div class="box">
+        <div class="boxInner">
+            <a href="/profile/<%= data.result[i].id%>" target="_blank">
+                <img class="lazy" data-original="http://pretty-girl.b0.upaiyun.com/<%= data.result[i].localSmallPicSrc%>!umei.pc.small" alt="<%= data.result[i].title%>" title="<%= data.result[i].title%>">
+            </a>
+        </div>
     </div>
     <% } %>
 </div>
