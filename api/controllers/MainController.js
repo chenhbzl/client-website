@@ -17,7 +17,6 @@ module.exports = {
     var id = req.params.id;
 
     Umei.findOne({where:{id:id, finish:true}, select:['localBigPic', 'title']}).exec(function (err, result) {
-      console.log("result", result);
 
       var title = result.title;
       var localBigPic = result.localBigPic;

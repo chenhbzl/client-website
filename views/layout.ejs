@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%if(data.title){%><%=data.title%><%}else{%>pretty-girl<%}%></title>
+    <title><%if(data && data.title){%><%=data.title%><%}else{%>pretty-girl<%}%></title>
 
     <!--STYLES-->
     <link rel="stylesheet" href="/styles/style.css">
@@ -50,6 +50,26 @@
 
             // Initialize Galleria
             Galleria.run('#galleria');
+        }
+    </script>
+    <script>
+        if ($('#list').length) {
+            $(document).keydown(function(e) {
+                console.log(e.which);
+                e.preventDefault(); // prevent the default action (scroll / move caret)
+                var curPage = $('#list').attr('data-page');
+                var page = null;
+                if (e.which === 39) { // next
+                  page = +curPage + 1;
+                } else if (e.which === 37) { //last
+                  if (curPage > 1) {
+                    page = +curPage - 1;
+                  }
+                }
+                if (page) {
+                    location.href = '/page/' + page;
+                }
+            });
         }
     </script>
   </body>

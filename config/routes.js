@@ -35,7 +35,8 @@ module.exports.routes = {
   '/': 'MainController.index',
   '/page/:page': 'MainController.index',
   '/profile/:id': 'MainController.profile',
-  '/api/:page': 'ApiController.getList'
+  '/api/v1/list': 'ApiV1Controller.getList',
+  '/api/v1/profile/:id': 'ApiV1Controller.getProfile'
 
   /***************************************************************************
   *                                                                          *
