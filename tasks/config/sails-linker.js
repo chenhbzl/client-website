@@ -47,7 +47,7 @@ module.exports = function(grunt) {
 			options: {
 				startTag: '<!--SCRIPTS-->',
 				endTag: '<!--SCRIPTS END-->',
-				fileTmpl: '<script src="//cdn.tsq.me%s"></script>',
+				fileTmpl: '<script src="//cdn.pretty-girl.top%s"></script>',
 				appRoot: '.tmp/public'
 			},
 			files: {
@@ -107,7 +107,7 @@ module.exports = function(grunt) {
 			options: {
 				startTag: '<!--STYLES-->',
 				endTag: '<!--STYLES END-->',
-				fileTmpl: '<link rel="stylesheet" href="//cdn.tsq.me%s">',
+				fileTmpl: '<link rel="stylesheet" href="//cdn.pretty-girl.top%s">',
 				appRoot: '.tmp/public'
 			},
 			files: {
