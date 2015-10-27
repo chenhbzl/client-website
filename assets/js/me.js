@@ -51,7 +51,15 @@ if ($('#list').length) {
     $('.nav_right').on('click', function () {
       nav('right');
     });
+    $('.list-box').on('click', function () {
+      if ($(this).hasClass('show')) {
+        $(this).removeClass('show');
+      } else {
+        $(this).addClass('show');
+      }
+    })
   });
+
 }
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

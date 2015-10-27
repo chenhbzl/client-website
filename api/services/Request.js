@@ -3,17 +3,17 @@ var apiUrl = process.env.NODE_INTERIP || 'http://localhost:3000/';
 
 
 module.exports = {
-  getUmeiProfileData: function (param, cb) {
+  getPrettyGirlProfileData: function (param, cb) {
     var opt = {
       qs: param,
-      uri: apiUrl + 'umei/getProfileData'
+      uri: apiUrl + 'prettyGirl/getProfileData'
     };
     request(opt, cb)
   },
-  getUmeiIndexData: function (param, cb) {
+  getPrettyGirlIndexData: function (param, cb) {
     var opt = {
       qs: param,
-      uri: apiUrl + 'umei/getIndexData'
+      uri: apiUrl + 'prettyGirl/getIndexData'
     };
     request(opt, cb)
   }

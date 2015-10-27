@@ -1,18 +1,29 @@
+var map = {
+  spring: 'umei',
+  summer: 'mm131',
+  autumn: 'd22mm',
+  winter: 'mzitu'
+};
 module.exports = {
   index: function (req, res) {
-    var page = req.params.page || 1;
-    Request.getUmeiIndexData({page: page}, function (err, response, body) {
-      console.log(body);
-
+    var opt = {
+      page: req.params.page || 1,
+      type: req.params.type,
+      collection:map[req.params.collection] || 'umei'
+    };
+    sails.log.info('opt', opt);
+    Request.getPrettyGirlIndexData(opt, function (err, response, body) {
       if (err) {
         return res.serverError(err);
+      }
+      if (!body) {
+        return res.notFound();
       }
       res.ok(JSON.parse(body), {view: 'index'});
     });
   },
   profile: function (req, res) {
-    var id = req.params.id;
-    Request.getUmeiProfileData({id: id}, function (err, response, body) {
+    Request.getPrettyGirlProfileData({id:req.params.id, collection: map[req.params.collection]}, function (err, response, body) {
       if (err) {
         return res.serverError(err);
       }
