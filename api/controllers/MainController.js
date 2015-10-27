@@ -1,7 +1,9 @@
 module.exports = {
-  index: function (req, res, next) {
+  index: function (req, res) {
     var page = req.params.page || 1;
     Request.getUmeiIndexData({page: page}, function (err, response, body) {
+      console.log(body);
+
       if (err) {
         return res.serverError(err);
       }
