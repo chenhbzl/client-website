@@ -34,5 +34,9 @@ module.exports = {
       }
       return res.ok(JSON.parse(body), {view: 'profile'});
     });
+  },
+  redirect: function (req, res) {
+    var url = '/summer/xinggan/page/1';
+    return res.redirect(url);
   }
 };
