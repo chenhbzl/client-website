@@ -28,6 +28,9 @@ module.exports = function sendOK (data, options) {
     return res.jsonx(data);
   }
 
+  if (data) {
+    data['env'] = sails.config.environment;
+  }
   // If second argument is a string, we take that to mean it refers to a view.
   // If it was omitted, use an empty object (`{}`)
   options = (typeof options === 'string') ? { view: options } : options || {};

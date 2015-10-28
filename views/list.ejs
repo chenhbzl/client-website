@@ -1,12 +1,9 @@
-
-
-
 <div class="wrap" id="list" data-page="<%=data.page%>">
     <% for(var i=0; i<data.result.length; i++) {%>
-    <div class="box">
+    <div class="box" id="<%=data.collection%>">
         <div class="boxInner">
-            <a href="/profile/<%= data.result[i].id%>" target="_blank">
-                <img class="lazy" data-original="http://img.pretty-girl.top/<%= data.result[i].localSmallPicSrc%>!umei.pc.small">
+            <a href="/<%=data.collection%>/profile/<%= data.result[i].id%>" target="_blank">
+                <img class="lazy" data-original="http://img.pretty-girl.top/<%= data.result[i].localSmallPicSrc%><%=data.smallPicRule%>">
             </a>
             <div class="titleBox"><%= data.result[i].title%></div>
         </div>

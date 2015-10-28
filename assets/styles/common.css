@@ -1,0 +1,16 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  background: transparent;
+  color: #676a6c;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: #eee;
+  font: 10px/13px 'Lucida Sans', sans-serif;
+}

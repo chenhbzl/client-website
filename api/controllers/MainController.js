@@ -6,10 +6,11 @@ var map = {
 };
 module.exports = {
   index: function (req, res) {
+    var collection = map[req.params.collection] || 'umei'
     var opt = {
       page: req.params.page || 1,
       type: req.params.type,
-      collection:map[req.params.collection] || 'umei'
+      collection: collection
     };
     sails.log.info('opt', opt);
     Request.getPrettyGirlIndexData(opt, function (err, response, body) {
@@ -19,7 +20,11 @@ module.exports = {
       if (!body) {
         return res.notFound();
       }
-      res.ok(JSON.parse(body), {view: 'index'});
+      body = JSON.parse(body);
+      body.collection = req.params.collection;
+      //var smallPicRule = 'umei.pc.small';
+      body.smallPicRule = DetectService(req, collection);
+      res.ok(body, {view: 'list'});
     });
   },
   profile: function (req, res) {
