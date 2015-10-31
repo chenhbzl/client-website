@@ -11,8 +11,8 @@
  * 		https://github.com/Zolmeister/grunt-sails-linker
  *
  */
-var cdn = '//cdn.pretty-girl.top';
-//var cdn = '';
+//var cdn = '//cdn.pretty-girl.top';
+var cdn = '';
 module.exports = function(grunt) {
 
 	grunt.config.set('sails-linker', {

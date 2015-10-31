@@ -49,7 +49,7 @@ module.exports = {
     });
   },
   redirect: function (req, res) {
-    var url = '/summer/xinggan/page/1';
+    var url = '/summer/mingxing/page/1';
     return res.redirect(url);
   }
 };
