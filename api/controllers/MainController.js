@@ -28,12 +28,17 @@ module.exports = {
     });
   },
   profile: function (req, res) {
+    console.log(req.headers['user-agent'].toLowerCase());
     Request.getPrettyGirlProfileData({id:req.params.id, collection: map[req.params.collection]}, function (err, response, body) {
       if (err) {
         return res.serverError(err);
       }
       if (req.param('from') === 'wechat') {
-        return res.ok(JSON.parse(body), {view: 'wechatprofile'});
+        if (req.headers['user-agent'].toLowerCase().indexOf('micromessenger') === -1) {
+          return res.forbidden({msg: 'Please open in wechat.'});
+        } else {
+          return res.ok(JSON.parse(body), {view: 'wechatprofile'});
+        }
       } else {
         return res.ok(JSON.parse(body), {view: 'profile'});
       }
