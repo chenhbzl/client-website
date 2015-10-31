@@ -22,13 +22,26 @@ module.exports = {
       }
       body = JSON.parse(body);
       body.collection = req.params.collection;
-      //var smallPicRule = 'umei.pc.small';
       body.smallPicRule = DetectService(req, collection);
+      var map = {
+        cn: '大陆',
+        hk: '港台',
+        jp: '日韩',
+        bagua: '八卦',
+        jingyan: '惊艳',
+        qiangliang: '清凉',
+        qipao: '旗袍',
+        mingxing: '明星',
+        xiaohua: '校花',
+        chemo: '车模',
+        qingchun: '清纯',
+        xinggan: '性感'
+      };
+      body.title = map[opt.type];
       res.ok(body, {view: 'list'});
     });
   },
   profile: function (req, res) {
-    console.log(req.headers['user-agent'].toLowerCase());
     Request.getPrettyGirlProfileData({id:req.params.id, collection: map[req.params.collection]}, function (err, response, body) {
       if (err) {
         return res.serverError(err);
