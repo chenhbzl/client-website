@@ -32,7 +32,11 @@ module.exports = {
       if (err) {
         return res.serverError(err);
       }
-      return res.ok(JSON.parse(body), {view: 'profile'});
+      if (req.param('from') === 'wechat') {
+        return res.ok(JSON.parse(body), {view: 'wechatprofile'});
+      } else {
+        return res.ok(JSON.parse(body), {view: 'profile'});
+      }
     });
   },
   redirect: function (req, res) {
