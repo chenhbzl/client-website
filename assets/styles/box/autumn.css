@@ -1,13 +1,13 @@
-@media only screen and (max-width : 360px) {
+/*@media only screen and (max-width : 360px) {
   #autumn.box {
     width: 33.3333%;
     padding-bottom: 44.4444%;
   }
-}
-@media only screen and (max-width : 480px) and (min-width : 361px) {
+}*/
+@media only screen and (max-width : 480px){
   #autumn.box {
-    width: 25%;
-    padding-bottom: 33.3333%;
+    width: 33.3333%;
+    padding-bottom: 44.4444%;
   }
 }
 @media only screen and (max-width : 600px) and (min-width : 481px) {
