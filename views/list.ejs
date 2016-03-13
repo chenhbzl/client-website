@@ -1,18 +1,20 @@
 <div class="wrap" id="list">
-    <% for(var i=0; i<data.result.length; i++) {%>
-    <div class="box">
-        <div class="boxInner">
-            <a href="/profile/<%= data.result[i].id%>" target="_blank">
-                <img class="lazy" data-original="http://img.pretty-girl.top/<%= data.result[i].localSmallPicSrc%>">
-            </a>
-            <div class="titleBox"><%= data.result[i].title%></div>
+    <div id="spring">
+        <% for(var i=0; i<data.result.length; i++) {%>
+        <div class="box">
+            <div class="boxInner">
+                <a href="/profile/<%= data.result[i].id%>" target="_blank">
+                    <img class="lazy" data-original="http://img.pretty-girl.top/<%= data.result[i].localSmallPicSrc%>">
+                </a>
+                <div class="titleBox"><%= data.result[i].title%></div>
+            </div>
         </div>
-    </div>
-    <% } %>
-    <%=data.result.length%>
-    <%if(!data.result.length){%>
+        <% } %>
+        <%=data.result.length%>
+        <%if(!data.result.length){%>
         <h1 style="width:100px;pxtext-align: center;position: fixed;top: 48%;margin-left:-50px;left: 50%">亲!木有啦!</h1>
-    <%}%>
+        <%}%>
+    </div>
 </div>
 
 
