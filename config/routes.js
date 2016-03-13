@@ -33,8 +33,8 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': 'MainController.redirect',
-  '/:collection/:type/page/:page': 'MainController.index',
-  '/:collection/profile/:id': 'MainController.profile'
+  '/:type/page/:page': 'MainController.index',
+  '/profile/:id': 'MainController.profile'
 
   /***************************************************************************
   *                                                                          *

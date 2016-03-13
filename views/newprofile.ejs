@@ -25,12 +25,12 @@
     }
 </style>
 <div id="galleria">
-    <% for(var i=0; i<data.localBigPic.length; i++) {%>
-    <a href="http://img.pretty-girl.top/<%=data.localBigPic[i]%>">
+    <% for(var i=0; i<data.result.localBigPic.length; i++) {%>
+    <a href="http://img.pretty-girl.top/<%=data.result.localBigPic[i]%>">
         <img
                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
-                data-big="http://img.pretty-girl.top/<%=data.localBigPic[i]%>"
-                data-description="<%=data.title%>"
+                data-big="http://img.pretty-girl.top/<%=data.result.localBigPic[i]%>"
+                data-description="<%=data.result.title%>"
                 >
     </a>
     <% } %>
