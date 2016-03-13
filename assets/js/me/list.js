@@ -14,7 +14,9 @@ if ($('#list').length) {
     }
   });
 
-  var curPage = $('#list').attr('data-page');
+  var href = location.href;
+  var i = href.lastIndexOf('/');
+  var curPage = href.substring(i + 1);
   var page = null;
   function nav(dir) {
     if (dir === 'right') {
@@ -25,10 +27,6 @@ if ($('#list').length) {
       }
     }
     if (page) {
-      var href = location.href;
-      var i = href.lastIndexOf('/');
-      console.log("href", href);
-      console.log("i", i);
       var newHref = href.substring(0, i);
       location.href = newHref + '/' + page;
     }
