@@ -1,10 +1,11 @@
 var request = require("module-request");
+var clientName = 'client-website';
 module.exports = {
   index: function (req, res) {
     var limit = 100;
     var page = req.params.page || 1;
     var type = req.params.type || 'mm';
-    request.getSmallPics({page: page, limit: limit, type: type}, function (err, body) {
+    request.getSmallPics({page: page, limit: limit, type: type, client: clientName}, function (err, body) {
       if (err) {
         return res.serverError(err);
       } else {
@@ -13,7 +14,7 @@ module.exports = {
     });
   },
   profile: function (req, res) {
-    request.getBigPics({id: req.params.id}, function (err, body) {
+    request.getBigPics({id: req.params.id, client: clientName}, function (err, body) {
       if (err) {
         console.error(err);
         return res.serverError(err);
