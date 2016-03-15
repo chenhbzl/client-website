@@ -2,7 +2,7 @@ var request = require("module-request");
 var clientName = 'client-website';
 module.exports = {
   index: function (req, res) {
-    var limit = 100;
+    var limit = 120;
     var page = req.params.page || 1;
     var type = req.params.type || 'mm';
     request.getSmallPics({page: page, limit: limit, type: type, client: clientName}, function (err, body) {
