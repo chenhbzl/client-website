@@ -1,5 +1,5 @@
 if ($('#list').length) {
-  $("img.lazy").lazyload();
+  $("img.lazy").lazyload({effect : "fadeIn"});
   <!-- Add some JavaScript to enable toggling the descriptions when an image is tapped on a touchscreen device -->
   $(function () {
     // See if this is a touch device
